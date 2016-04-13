@@ -1,4 +1,4 @@
-"""
+/*
 String cleaning
 ===============
 
@@ -38,51 +38,4 @@ chunk will have no more than 20 characters.
 
 word will have at least one character, and no more than the number of characters
 in chunk.
-"""
-
-def lift(string, start, length):
-    """
-    Returns a string with a specified index range removed
-    """
-    a = start
-    b = start + length
-    return string[:a] + string[b:]
-
-
-def rclean(subject, search, offset):
-    """
-    Repeatedly removes all occurrences of search starting at offset
-    """
-
-    # find the first index of the word, starting at offset
-    index = subject.find(search, offset)
-
-    length = len(search)
-
-    # keep relacing until search can not be found in subject
-    while index != -1 and offset < length:
-        subject = lift(subject, index, length)
-        index = subject.find(search)
-
-    return subject
-
-
-def answer(chunk, word):
-    """
-    Returns the shortest, lexicographically earliest string that can be formed
-    by removing occurrences of word from chunk.
-
-    This method does all replacements for each subsequent section of the string.
-    """
-    results = []
-
-    for offset in range(len(chunk) - len(word)):
-
-        # repeatedly removes all occurrences of word in chunk starting at offset
-        result = rclean(chunk, word, offset)
-
-        # check if there were any replacements
-        if result != chunk:
-            results.append(result)
-
-    return sorted(results)[0]
+*/

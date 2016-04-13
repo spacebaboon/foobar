@@ -1,4 +1,4 @@
-"""
+/*
 Access codes
 ============
 
@@ -25,19 +25,4 @@ The code "cba" is identical to "abc" as well as "cba." The list
 Write a function answer(x) which takes a list of access code strings, x, and
 returns the number of distinct access code strings using this definition of
 identical.
-"""
-
-def palindromic_unique(values):
-    """
-    Returns a set of unique values where identical is
-    defined as either naturally equal or equal in reverse
-    """
-    collection = set()
-    for value in values:
-        if value[::-1] not in collection:
-            collection.add(value)
-
-    return collection
-
-def answer(access_codes):
-    return len(palindromic_unique(access_codes))
+*/
